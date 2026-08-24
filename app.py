@@ -1,7 +1,7 @@
 from pathlib import Path
 import streamlit as st
 
-APP_BUILD = "SAFE19_FIX12"
+APP_BUILD = "SAFE19_FIX13"
 
 st.set_page_config(
     page_title="Kansas Maize Climate-Risk Guide",
@@ -39,4 +39,3 @@ PAGES = {
 
 pg = st.navigation(PAGES)
 pg.run()
-

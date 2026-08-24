@@ -1,0 +1,18 @@
+{
+  "created": "2026-08-24T17:44:13.892253",
+  "source_projects_modified": false,
+  "copied_sources": [
+    "H:\\Kansas_Maize_4Cultivars_6Date_Regional_Analysis_SAFE02\\02_Tables\\regional_longterm_paired_metrics.csv",
+    "H:\\Kansas_Maize_4Cultivars_6Date_Regional_Analysis_SAFE02\\02_Tables\\regional_longterm_yield_water.csv",
+    "H:\\Kansas_Maize_ThermalRisk_SAFE13_20260823_123650\\04_Regional_Statewide\\regional_thermal_risk_summary_long.csv",
+    "H:\\Kansas_Maize_ThermalYield_Synthesis_SAFE14_FIX01_20260824_073646\\02_Integrated\\regional_yield_water_thermal_integrated_SAFE14.csv",
+    "H:\\Kansas_Maize_HeatAssociatedYieldPenalty_SAFE16_FIX01_20260824_111336\\03_Penalties\\regional_date_total_and_heat_associated_penalty_SAFE16_FIX01.csv",
+    "H:\\Kansas_Maize_HeatVsCold_YieldPenalty_SAFE17_FIX01_20260824_115305\\03_Models\\regional_aligned_heat_cold_FE_penalties_SAFE17_FIX01.csv",
+    "H:\\Kansas_Maize_HeatVsCold_YieldPenalty_SAFE17_FIX01_20260824_115305\\04_Tables\\heat_vs_cold_threshold_overall_summary_SAFE17_FIX01.csv",
+    "H:\\Kansas_Maize_HeatVsCold_YieldPenalty_SAFE17_FIX01_20260824_115305\\04_Tables\\TOP30_regional_temperature_penalties_kg_ha_SAFE17_FIX01.csv",
+    "H:\\Kansas_Maize_HeatVsCold_YieldPenalty_SAFE17_FIX01_20260824_115305\\04_Tables\\TOP30_regional_temperature_penalties_pct_SAFE17_FIX01.csv",
+    "H:\\Kansas_Maize_4Cultivars_6Date_Regional_Analysis_SAFE02\\Climate_Rainfall_ET_Temperature_SAFE01\\Regional_Mean_Rainfall_ET_Temperature.csv"
+  ],
+  "missing_optional_or_expected_sources": [],
+  "policy": "Only derivative tables and publication graphics were copied. No report/provenance download assets are exported."
+}

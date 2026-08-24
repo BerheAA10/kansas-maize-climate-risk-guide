@@ -32,8 +32,8 @@ if expected_pages != got_pages:
     errors.append(f"Page set mismatch: {sorted(got_pages)}")
 
 app = (ROOT / "app.py").read_text(encoding="utf-8")
-if 'APP_BUILD = "SAFE19_FIX12"' not in app:
-    errors.append("FIX12 build marker missing.")
+if 'APP_BUILD = "SAFE19_FIX13"' not in app:
+    errors.append("FIX13 build marker missing.")
 if "maps_gallery.py" in app or "Maps & figures" in app:
     errors.append("Maps & figures navigation must be removed.")
 
@@ -102,13 +102,32 @@ for asset in [
     if not asset.exists():
         errors.append(f"Overview fallback asset missing: {asset.name}")
 
-launcher = ROOT / "RUN_BUILD_AND_LAUNCH_FIX12.ps1"
+launcher = ROOT / "RUN_BUILD_AND_LAUNCH_FIX13.ps1"
 if not launcher.exists():
-    errors.append("RUN_BUILD_AND_LAUNCH_FIX12.ps1 missing.")
+    errors.append("RUN_BUILD_AND_LAUNCH_FIX13.ps1 missing.")
 else:
     ltxt = launcher.read_text(encoding="utf-8-sig")
-    if "--server.port 8510" not in ltxt:
-        errors.append("FIX12 launcher must use port 8510.")
+    if "--server.port 8511" not in ltxt:
+        errors.append("FIX13 launcher must use port 8511.")
+
+
+# FIX13 Heat & freeze layout.
+thermal = (ROOT / "app_pages" / "thermal_risk.py").read_text(encoding="utf-8")
+for token in [
+    "Thermal-risk threshold summary",
+    '["Heat", "Cold / freeze"]',
+    "with st.container(border=True):",
+    "height=390",
+    "height=455",
+    "Two filters per row",
+]:
+    if token not in thermal:
+        errors.append(f"FIX13 thermal layout token missing: {token}")
+
+if "Kansas Maize Climate-Risk Atlas" in (ROOT / "app.py").read_text(encoding="utf-8"):
+    errors.append("Atlas title must not remain in app.py.")
+if "Kansas Maize Climate-Risk Atlas" in (ROOT / "app_pages" / "home.py").read_text(encoding="utf-8"):
+    errors.append("Atlas title must not remain in home.py.")
 
 if errors:
     print("VALIDATION FAILED")

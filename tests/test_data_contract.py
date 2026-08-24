@@ -87,6 +87,21 @@ def test_no_download_controls():
 
 
 def test_fix11_launcher():
-    p = ROOT / "RUN_BUILD_AND_LAUNCH_FIX12.ps1"
+    p = ROOT / "RUN_BUILD_AND_LAUNCH_FIX13.ps1"
     assert p.exists()
-    assert "--server.port 8510" in p.read_text(encoding="utf-8-sig")
+    assert "--server.port 8511" in p.read_text(encoding="utf-8-sig")
+
+
+def test_fix13_guide_title():
+    assert "Kansas Maize Climate-Risk Guide" in (ROOT / "app.py").read_text(encoding="utf-8")
+    assert "Kansas Maize Climate-Risk Guide" in (ROOT / "app_pages" / "home.py").read_text(encoding="utf-8")
+
+
+def test_fix13_thermal_layout():
+    txt = (ROOT / "app_pages" / "thermal_risk.py").read_text(encoding="utf-8")
+    assert "Thermal-risk threshold summary" in txt
+    assert '["Heat", "Cold / freeze"]' in txt
+    assert "with st.container(border=True):" in txt
+    assert "height=390" in txt
+    assert "height=455" in txt
+    assert "Two filters per row" in txt

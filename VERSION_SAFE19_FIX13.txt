@@ -1,0 +1,7 @@
+SAFE19_FIX13
+Public title: Kansas Maize Climate-Risk Guide.
+Heat & freeze page reorganized to prevent squeezed/distorted threshold charts.
+Heat and Cold/Freeze threshold summaries are viewed separately.
+Charts use larger rectangular bordered frames and larger dark text.
+Explorer filters use two columns per row and a larger result chart.
+Scientific calculations changed: NO

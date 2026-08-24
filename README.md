@@ -272,3 +272,17 @@ Overview climate-panel presentation refinement:
 - placed each climate panel inside a rectangular bordered container for consistency;
 - strengthened the plot frame using mirrored axis lines on all sides;
 - no scientific calculations or validated source files were changed.
+
+
+## SAFE19_FIX13
+
+Heat & Freeze layout refinement:
+- renamed the public application to **Kansas Maize Climate-Risk Guide**;
+- separated Heat and Cold/Freeze threshold summaries so only three thresholds are
+  shown at once;
+- enlarged the two threshold charts and placed them in rectangular bordered
+  containers;
+- increased axis/tick fonts and strengthened black plot frames;
+- reorganized the yield-impact explorer filters into two columns per row;
+- enlarged the explorer result chart and moved its table into an expander;
+- retained all validated calculations unchanged.

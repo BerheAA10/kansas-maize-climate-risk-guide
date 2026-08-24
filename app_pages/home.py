@@ -389,4 +389,3 @@ c1.metric("Kansas DSSAT sites", "2,776")
 c2.metric("Years", "38")
 c3.metric("Planting dates", "6")
 c4.metric("Water regimes", "2")
-
