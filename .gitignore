@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.streamlit/secrets.toml
+data/private/
+data/raw/
+*.parquet
+*.gz
+*.zip
+# Keep only explicitly reviewed derivative CSVs in data/public.

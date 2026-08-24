@@ -1,0 +1,6 @@
+SAFE19_FIX04
+1. Gallery displays exactly ONE selected map/figure at a time.
+2. Stronger line colors, unique markers, unique dash patterns, thicker lines.
+3. Larger black axis, tick, legend, and hover text.
+4. Producer Optimizer explicitly labels maturity class and planting date for displayed metrics and ranking table.
+Scientific calculations changed: NO

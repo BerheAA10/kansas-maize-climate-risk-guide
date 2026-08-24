@@ -1,0 +1,7 @@
+SAFE19_FIX08
+1. Removed the Select ONE map or figure filename control.
+2. Gallery filters are scientific only: topic, region, water regime, maturity, planting date.
+3. Topic is required; when a dimension has multiple values, the relevant scientific choice is required before display.
+4. The app automatically displays the highest-priority matching image.
+5. Added RUN_BUILD_AND_LAUNCH_FIX08.ps1 to avoid stale PowerShell variables / wrong working directories.
+Scientific calculations changed: NO

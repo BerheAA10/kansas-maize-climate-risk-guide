@@ -1,0 +1,3 @@
+SAFE19_FIX05
+Explicit trace rebuild; one-image gallery; maturity-scope optimizer.
+Scientific calculations changed: NO

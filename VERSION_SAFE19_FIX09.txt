@@ -1,0 +1,4 @@
+SAFE19_FIX09
+Overview uses the user-supplied rainfall-vs-ET and temperature figures.
+Overview replaces the previous approximate block map with a Kansas state-outline view and six labeled study regions.
+Scientific calculations changed: NO

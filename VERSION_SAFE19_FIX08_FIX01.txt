@@ -1,0 +1,6 @@
+SAFE19_FIX08_FIX01
+Launcher-only repair.
+Fixes invalid $Here.Directory.FullName PowerShell path handling.
+Build launcher captures the exact Output: path from the public-bundle exporter.
+Adds a launcher for an already-created SAFE19_FIX08 public bundle.
+Dashboard scientific calculations changed: NO

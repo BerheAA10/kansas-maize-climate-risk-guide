@@ -1,0 +1,7 @@
+SAFE19_FIX11
+Removed visible SAFE captions and validated-source captions from research pages.
+Removed the Maps & figures page and navigation entirely.
+Moved Producer Optimizer description to the bottom.
+Overview climate charts use larger black axis/tick/text fonts using the actual climate summary when found.
+Attached overview PNGs remain as fallback assets.
+Scientific calculations and validated source data changed: NO

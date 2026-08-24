@@ -1,0 +1,6 @@
+SAFE19_FIX10
+Fixes planting-date display schema across the Streamlit dashboard.
+Canonical x-axis dates: April 1, April 10, April 20, May 1, May 10, May 20.
+Eliminates NaN as a pseudo planting-date category.
+Yield & Water explicitly renders all six planting dates.
+Scientific calculations and validated source files changed: NO

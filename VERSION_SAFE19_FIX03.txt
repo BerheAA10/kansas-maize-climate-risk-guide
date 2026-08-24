@@ -1,0 +1,6 @@
+SAFE19_FIX03
+1. Publication-strength line styling on Yield & Water, Planting date × maturity × thermal exposure, and Temperature-associated yield penalties.
+2. Distinct colors and markers for maturity classes and planting dates.
+3. Larger black chart text, stronger axes/legends, thicker lines and larger markers.
+4. Producer Optimizer now explicitly identifies recommended maturity class and planting date for all displayed metrics.
+Scientific calculations changed: NO

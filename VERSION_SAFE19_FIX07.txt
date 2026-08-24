@@ -1,0 +1,6 @@
+SAFE19_FIX07
+1. Overview uses a Kansas regional study map.
+2. Overview adds side climate panels for regional mean Tmax/Tmin and crop ET vs seasonal rainfall when validated columns are available.
+3. Maps & figures gallery now uses guided topic-driven selection; broad Any/Any/Any display is prevented.
+4. Gallery ranks candidate images and asks the user to refine if too many remain.
+Scientific calculations changed: NO

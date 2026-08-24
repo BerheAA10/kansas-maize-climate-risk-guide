@@ -1,0 +1,6 @@
+SAFE19_FIX01
+Fixes:
+1. Normalize cultivar_id/cultivar_label to LS/MS/SS/VSS for Yield & Water page.
+2. Replace deprecated use_container_width with width API.
+3. Add schema compatibility validation independent of Streamlit runtime.
+Scientific calculations changed: NO

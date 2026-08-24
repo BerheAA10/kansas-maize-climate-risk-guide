@@ -1,0 +1,6 @@
+SAFE19_FIX02
+1. Filter-driven maps/figures gallery; max 4 displayed.
+2. Producer Optimizer added.
+3. Downloads/provenance page and all download buttons removed.
+4. Report assets removed from deployment bundle.
+Scientific calculations changed: NO

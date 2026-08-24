@@ -1,0 +1,4 @@
+SAFE19_FIX12
+Overview climate charts enlarged and displayed inside rectangular bordered containers.
+Rainfall vs crop ET made less tight with larger chart area and stronger plot frame.
+Scientific calculations and validated source data changed: NO

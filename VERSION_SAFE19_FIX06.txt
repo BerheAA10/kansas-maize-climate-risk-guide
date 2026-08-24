@@ -1,0 +1,7 @@
+SAFE19_FIX06
+Kansas-first Overview; study context moved to bottom.
+Heat & freeze page moved to end of Research atlas.
+Compact narrow thermal bars with larger black text.
+Heat/cold definitions moved below charts.
+Interactive SAFE17 yield-impact explorer by planting date, maturity, region, water regime, and threshold.
+Scientific calculations changed: NO
