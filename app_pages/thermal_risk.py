@@ -428,19 +428,31 @@ else:
 
             st.plotly_chart(fig, width="stretch")
 
-        with st.expander("View selected comparison values"):
-            st.dataframe(
-                plot.rename(columns={
-                    dim: compare_by,
-                    "value": metric_label,
-                    "event_probability_pct": "Event probability (%)",
-                    "p_value": "Median p-value",
-                }).round(3),
-                width="stretch",
-                hide_index=True,
-            )
+with st.expander("View selected comparison values"):
+    # PyArrow requires unique dataframe column names. If Event
+    # probability (%) is itself the selected response, "value" already
+    # contains that metric; remove the duplicate contextual copy.
+    display_table = plot.rename(columns={
+        dim: compare_by,
+        "value": metric_label,
+        "p_value": "Median p-value",
+    }).copy()
 
+    if metric == "event_probability_pct":
+        display_table = display_table.drop(
+            columns=["event_probability_pct"],
+            errors="ignore",
+        )
+    else:
+        display_table = display_table.rename(columns={
+            "event_probability_pct": "Event probability (%)",
+        })
 
+    st.dataframe(
+        display_table.round(3),
+        width="stretch",
+        hide_index=True,
+    )
 # ------------------------------------------------------------------
 # Definitions at bottom
 # ------------------------------------------------------------------
