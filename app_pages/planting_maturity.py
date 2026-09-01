@@ -8,7 +8,13 @@ df,src=load_table("safe14_integrated"); source_badge(src)
 if df.empty: st.warning("Export SAFE14 integrated data to activate this page."); st.stop()
 c1,c2=st.columns(2); region=c1.selectbox("Region",REGIONS); scenario=c2.selectbox("Water regime",SCENARIOS)
 q=df[(df["region"].eq(region))&(df["scenario"].eq(scenario))].copy()
-metric_options={"Mean yield (kg/ha)":"mean_yield_kg_ha","Growing-season Tmin ≤0 probability (%)":"p_freeze_growing_pct","Flowering Tmax ≥35 probability (%)":"p_heat35_flowering_pct","Flowering Tmax ≥38 probability (%)":"p_heat38_flowering_pct","Reproductive Tmax ≥35 probability (%)":"p_heat35_reproductive_pct","Yield penalty (kg/ha)":"yield_penalty_kg_ha","Yield penalty (%)":"yield_penalty_pct"}
+
+# SAFE20_FIX06_FIX03: planting-date yield penalty is relative to the
+# best planting date and therefore cannot be negative.
+for _penalty_col in ("yield_penalty_kg_ha", "yield_penalty_pct"):
+    if _penalty_col in q.columns:
+        q[_penalty_col] = q[_penalty_col].clip(lower=0)
+metric_options={"Mean yield (kg/ha)":"mean_yield_kg_ha","Growing-season Tmin ≤0 probability (%)":"p_freeze_growing_pct","Flowering Tmax ≥35 probability (%)":"p_heat35_flowering_pct","Flowering Tmax ≥38 probability (%)":"p_heat38_flowering_pct","Reproductive Tmax ≥35 probability (%)":"p_heat35_reproductive_pct","Yield penalty relative to best planting date (kg/ha)":"yield_penalty_kg_ha","Yield penalty relative to best planting date (%)":"yield_penalty_pct"}
 label=st.selectbox("Response",list(metric_options)); metric=metric_options[label]
 q["planting_label"]=pd.Categorical(q["planting_label"],categories=DATES,ordered=True); q=q.sort_values(["maturity_class","planting_label"])
 fig=go.Figure()
