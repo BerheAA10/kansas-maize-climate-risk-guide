@@ -108,7 +108,7 @@ if profile == "Custom weights":
     wy = a.slider("Weight — Yield",0,100,wy,5)
     wt = b.slider("Weight — Thermal risk",0,100,wt,5)
     ww = c.slider("Weight — Irrigation",0,100,ww,5)
-    wp = dw.slider("Weight — Yield penalty",0,100,wp,5)
+    wp = dw.slider("Weight — Yield penalty relative to best planting date",0,100,wp,5)
     wi = e.slider("Weight — IWUE",0,100,wi,5)
 
 near_optimal = st.checkbox(
@@ -154,6 +154,11 @@ def benefit_norm(s):
 
 def cost_norm(s):
     return 1-benefit_norm(s)
+
+# SAFE20_FIX06_FIX03: normalize the selected planting-date penalty before
+# optimizer scoring, cards, tables, and hover displays.
+if penalty_col and penalty_col in q.columns:
+    q[penalty_col] = pd.to_numeric(q[penalty_col], errors="coerce").clip(lower=0)
 
 scores = pd.Series(0.0,index=q.index)
 weight_sum = 0.0
@@ -219,9 +224,9 @@ if thermal_col and pd.notna(best.get(thermal_col)):
 else:
     m2.metric(f"{best_maturity} thermal screening","—")
 if penalty_col and pd.notna(best.get(penalty_col)):
-    m3.metric(f"{best_maturity} yield penalty", f"{best[penalty_col]:.1f}%")
+    m3.metric(f"{best_maturity} yield penalty vs best planting date", f"{best[penalty_col]:.1f}%")
 else:
-    m3.metric(f"{best_maturity} yield penalty","—")
+    m3.metric(f"{best_maturity} yield penalty vs best planting date","—")
 if scenario == "Irrigated" and irrig_col and pd.notna(best.get(irrig_col)):
     m4.metric(f"{best_maturity} irrigation", f"{best[irrig_col]:.0f} mm")
 else:
@@ -250,7 +255,7 @@ display_top = display_top.rename(columns={
     "producer_score": "Producer Score",
     "mean_yield_kg_ha": "Mean yield (kg/ha)",
     "thermal_screening_index_pct": "Thermal screening (%)",
-    "yield_penalty_pct": "Yield penalty (%)",
+    "yield_penalty_pct": "Yield penalty relative to best planting date (%)",
     "irrigation_mean_mm": "Irrigation (mm)",
     "incremental_iwue_mean_kg_m3": "Incremental IWUE (kg/m³)",
     "p_freeze_growing_pct": "Freeze probability (%)",
